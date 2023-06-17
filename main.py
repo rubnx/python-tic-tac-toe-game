@@ -10,4 +10,4 @@ current_board = f"""
 +---+---+---+
 """
 
-print(current_game)
+print(current_board)
