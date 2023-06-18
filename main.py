@@ -1,17 +1,5 @@
-from data import logo, board, is_winner, is_board_full, clean_board
+from data import logo, board, is_winner, is_board_full, clean_board, current_board
 import random
-
-
-def current_board(board):
-    return f"""
-    +---+---+---+
-    | {board[0][0]} | {board[0][1]} | {board[0][2]} |
-    +---+---+---+
-    | {board[1][0]} | {board[1][1]} | {board[1][2]} |
-    +---+---+---+
-    | {board[2][0]} | {board[2][1]} | {board[2][2]} |
-    +---+---+---+
-    """
 
 
 players = [{"name": "Player X", "symbol": "X"}, {"name": "Player O", "symbol": "O"}]

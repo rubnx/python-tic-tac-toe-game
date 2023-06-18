@@ -18,6 +18,19 @@ logo = """
 board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
 
+# Function that prints the current state of the board
+def current_board(board):
+    return f"""
+    +---+---+---+
+    | {board[0][0]} | {board[0][1]} | {board[0][2]} |
+    +---+---+---+
+    | {board[1][0]} | {board[1][1]} | {board[1][2]} |
+    +---+---+---+
+    | {board[2][0]} | {board[2][1]} | {board[2][2]} |
+    +---+---+---+
+    """
+
+
 # Clean board for new game
 def clean_board(board):
     board[0] = [" ", " ", " "]
@@ -62,51 +75,23 @@ def is_winner(current_player):
 
 # Check if the board is already full
 def is_board_full():
-    if (
-        board[0][0] != " "
-        and board[0][1] != " "
-        and board[0][2] != " "
-        and board[1][0] != " "
-        and board[1][1] != " "
-        and board[1][2] != " "
-        and board[2][0] != " "
-        and board[2][1] != " "
-        and board[2][2] != " "
-    ):
-        return True
+    for row in board:
+        for cell in row:
+            if cell == " ":
+                return False
+    return True
 
 
-# # Winning rows
-# board[0][0]
-# board[0][1]
-# board[0][2]
-
-# board[1][0]
-# board[1][1]
-# board[1][2]
-
-# board[2][0]
-# board[2][1]
-# board[2][2]
-
-# # Winnings columns
-# board[0][0]
-# board[1][0]
-# board[2][0]
-
-# board[0][1]
-# board[1][1]
-# board[2][1]
-
-# board[0][2]
-# board[1][2]
-# board[2][2]
-
-# #Winnings diagonals
-# board[0][0]
-# board[1][1]
-# board[2][2]
-
-# board[0][2]
-# board[1][1]
-# board[2][0]
+# My first approach was a bit rough
+# if (
+#     board[0][0] != " "
+#     and board[0][1] != " "
+#     and board[0][2] != " "
+#     and board[1][0] != " "
+#     and board[1][1] != " "
+#     and board[1][2] != " "
+#     and board[2][0] != " "
+#     and board[2][1] != " "
+#     and board[2][2] != " "
+# ):
+#     return True
